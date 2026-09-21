@@ -1,143 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recent Stories</title>
+  <title>unknown</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <nav>
-      <a href="#" data-page="stories" class="active">Recent Stories</a>
-      <a href="#" data-page="blog">Blog</a>
-      <a href="#" data-page="about">About</a>
-      <a href="#" data-page="contact">Contact</a>
-    </nav>
+  <!-- === Tiêu đề chính === -->
+  <header class="site-title">
+    <h1>unknown</h1>
   </header>
 
+  <!-- === Menu chính === -->
+  <nav class="main-nav">
+    <a href="#" data-page="all" class="active">Tất cả</a>
+    <a href="#" data-page="stories">Truyện</a>
+    <a href="#" data-page="film">Phim</a>
+    <a href="#" data-page="story">Câu chuyện</a>
+    <a href="#" data-page="other">Khác</a>
+  </nav>
+
+  <!-- === Menu phụ dưới === -->
+  <nav class="sub-nav">
+    <a href="#" data-page="blog" class="active">Blog</a>
+    <a href="#" data-page="contact">Liên hệ</a>
+    <a href="#" data-page="terms">Điều khoản sử dụng</a>
+  </nav>
+
   <main class="container">
-    <!-- === Trang Danh sách truyện === -->
-    <div id="stories-page" class="page active">
-      <h1>Recent Stories</h1>
-      <p class="subtitle">Latest updates, analysis, and insights.</p>
+    <!-- === Tất cả / Tin tức gần đây === -->
+    <div id="all-page" class="page active">
+      <h2>Tin tức gần đây</h2>
+      <p class="subtitle">Những cập nhật, phân tích và nhận định mới nhất.</p>
       <div id="storyList" class="posts-list"></div>
-      <div class="pagination">
-        <a href="#" class="prev">← Previous</a>
-        <a href="#" class="next">Next →</a>
+      <div class="back-all">
+        <a href="#" id="back-to-all">← Trở lại tất cả các bài viết</a>
       </div>
     </div>
 
-    <!-- === Trang Đọc truyện === -->
+    <!-- === Đọc nội dung chương === -->
     <div id="chapter-page" class="page">
-      <a href="#" id="back-link" class="back-link">← Back to all stories</a>
-      <h1 id="story-title"></h1>
+      <a href="#" id="back-link" class="back-link">← Trở lại tất cả</a>
       <time id="story-date" class="post-date"></time>
+      <h2 id="story-title"></h2>
       
-      <div id="chapter-nav" class="chapter-nav">
+      <div class="chapter-nav">
         <select id="chapter-select"></select>
-        <a href="#" id="prev-chapter" class="chapter-link">← Prev</a>
-        <a href="#" id="next-chapter" class="chapter-link">Next →</a>
+        <a href="#" id="prev-chapter" class="chapter-link">← Trước đó</a>
+        <a href="#" id="next-chapter" class="chapter-link">Tiếp theo →</a>
       </div>
       
       <div id="chapter-content" class="post-content"></div>
+      
+      <div class="bottom-nav">
+        <a href="#" id="bottom-prev">← Trước đó</a>
+        <a href="#" id="bottom-next">Tiếp theo →</a>
+      </div>
     </div>
 
-    <!-- === Trang Blog === -->
+    <!-- === Blog === -->
     <div id="blog-page" class="page">
-      <h1>Blog</h1>
-      <p class="subtitle">Thoughts, writing notes, and behind the scenes.</p>
+      <h2>Blog</h2>
+      <p class="subtitle">Những suy nghĩ, ghi chú và những điều hậu trường.</p>
       
       <article class="post-item">
-        <time class="post-date">Sep 21, 2026</time>
-        <h2 class="post-title">
-          <a href="#">Why I Write Stories About Resilience and New Beginnings</a>
-        </h2>
-        <p>Every story starts with a small truth — that we are stronger than we think. Here's why these themes matter to me...</p>
-        <a href="#" class="read-link">Read Article →</a>
+        <time class="post-date">21/09/2026</time>
+        <h3 class="post-title">
+          <a href="#">Tại sao tôi viết về sự kiên cường và khởi đầu mới</a>
+        </h3>
+        <p>Mỗi câu chuyện đều bắt nguồn từ một sự thật nhỏ — chúng ta mạnh mẽ hơn mình tưởng.</p>
+        <a href="#" class="read-link">Đọc →</a>
       </article>
 
       <article class="post-item">
-        <time class="post-date">Sep 20, 2026</time>
-        <h2 class="post-title">
-          <a href="#">On Showing Up Even When No One Is Watching</a>
-        </h2>
-        <p>Success doesn't happen overnight. It happens in the quiet days when you keep going anyway...</p>
-        <a href="#" class="read-link">Read Article →</a>
-      </article>
-
-      <article class="post-item">
-        <time class="post-date">Sep 19, 2026</time>
-        <h2 class="post-title">
-          <a href="#">Your Story Isn't Over Yet — It's Just Changing Chapters</a>
-        </h2>
-        <p>When life rewrites your plans, that's not the end — it's the start of something better...</p>
-        <a href="#" class="read-link">Read Article →</a>
+        <time class="post-date">20/09/2026</time>
+        <h3 class="post-title">
+          <a href="#">Tiếp tục bước đi dù không ai nhìn thấy</a>
+        </h3>
+        <p>Thành công không đến trong một ngày, mà đến từ những ngày tháng lặng lẽ cố gắng.</p>
+        <a href="#" class="read-link">Đọc →</a>
       </article>
     </div>
 
-    <!-- === Trang About === -->
-    <div id="about-page" class="page">
-      <h1>About</h1>
-      <p class="subtitle">A little about the stories and the person behind them.</p>
-      
-      <div style="line-height:1.8;">
-        <p>Welcome — this is a place for stories that stay with you.</p>
-        <br>
-        <p>I write about people finding their way back to themselves. About quiet strength, unexpected turns, and the moments that change everything.</p>
-        <br>
-        <p>These aren't just words on a screen. They're reminders that second chances exist, that people can grow, and that the chapter you're in right now — even the hard one — is leading you somewhere better.</p>
-        <br>
-        <p>Thank you for reading. 💛</p>
-      </div>
-    </div>
-
-    <!-- === Trang Contact === -->
+    <!-- === Liên hệ === -->
     <div id="contact-page" class="page">
-      <h1>Contact</h1>
-      <p class="subtitle">Have a question, thought, or just want to say hello?</p>
+      <h2>Liên hệ</h2>
+      <p class="subtitle">Có điều muốn nói, hợp tác, hay chỉ chào hỏi?</p>
       
-      <div style="line-height:2; margin-top:1.5rem;">
-        <p><strong>Email</strong><br>stories@example.com</p>
-        <p><strong>Collaborations</strong><br>Open to interesting projects and creative ideas.</p>
-        <p><strong>Feedback</strong><br>Your thoughts help these stories grow. All messages are read and appreciated.</p>
-        <br>
-        <p style="color:#888; font-size:0.95rem;">I reply as soon as I can. Thank you for being here.</p>
+      <div class="contact-text">
+        <p><strong>Email</strong><br>contact@example.com</p>
+        <p><strong>Hợp tác</strong><br>Mở ra cho ý tưởng và dự án cùng phát triển.</p>
+        <p class="note">Tôi sẽ trả lời sớm nhất có thể. Cảm ơn đã ghé thăm!</p>
       </div>
+    </div>
+
+    <!-- === Điều khoản sử dụng === -->
+    <div id="terms-page" class="page">
+      <h2>Điều khoản sử dụng</h2>
+      <p class="subtitle">Quy định khi sử dụng nội dung trên trang.</p>
+      
+      <div class="about-text">
+        <p><strong>1. Nội dung</strong></p>
+        <p>Tất cả câu chuyện, bài viết trên trang đều là sáng tác gốc. Không sao chép, phát hành lại khi chưa có sự cho phép.</p>
+        <br>
+        <p><strong>2. Sử dụng</strong></p>
+        <p>Bạn được đọc, chia sẻ với mục đích tham khảo. Vui lòng ghi rõ nguồn khi trích dẫn.</p>
+        <br>
+        <p><strong>3. Thay đổi</strong></p>
+        <p>Các điều khoản có thể được cập nhật mà không báo trước. Vui lòng kiểm tra định kỳ.</p>
+      </div>
+    </div>
+
+    <!-- === Các trang tạm === -->
+    <div id="stories-page" class="page">
+      <h2>Truyện</h2>
+      <p class="subtitle">Danh sách các câu chuyện đang cập nhật...</p>
+    </div>
+    <div id="film-page" class="page">
+      <h2>Phim</h2>
+      <p class="subtitle">Nội dung đang xây dựng...</p>
+    </div>
+    <div id="story-page" class="page">
+      <h2>Câu chuyện</h2>
+      <p class="subtitle">Nội dung đang xây dựng...</p>
+    </div>
+    <div id="other-page" class="page">
+      <h2>Khác</h2>
+      <p class="subtitle">Nội dung đang xây dựng...</p>
     </div>
   </main>
 
   <script src="js/main.js"></script>
   <script>
-    // Điều hướng giữa các trang
-    const navLinks = document.querySelectorAll('nav a');
+    const allNavLinks = document.querySelectorAll('nav a');
     const pages = document.querySelectorAll('.page');
 
     function showPage(pageId) {
       pages.forEach(p => p.classList.remove('active'));
-      navLinks.forEach(l => l.classList.remove('active'));
+      allNavLinks.forEach(l => l.classList.remove('active'));
       
       if (pageId === 'chapter-page') {
         document.getElementById('chapter-page').classList.add('active');
       } else {
-        document.getElementById(pageId + '-page').classList.add('active');
-        document.querySelector(`[data-page="${pageId}"]`).classList.add('active');
+        const targetPage = document.getElementById(pageId + '-page');
+        if (targetPage) targetPage.classList.add('active');
+        const activeLink = document.querySelector(`[data-page="${pageId}"]`);
+        if (activeLink) activeLink.classList.add('active');
       }
     }
 
-    navLinks.forEach(link => {
+    allNavLinks.forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
         showPage(link.getAttribute('data-page'));
       });
     });
 
-    // Nút quay lại danh sách
     document.getElementById('back-link').addEventListener('click', e => {
       e.preventDefault();
-      showPage('stories');
-      currentStory = null;
-      currentChapterIndex = 0;
+      showPage('all');
+    });
+    document.getElementById('back-to-all')?.addEventListener('click', e => {
+      e.preventDefault();
+      showPage('all');
     });
   </script>
 </body>
