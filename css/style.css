@@ -218,3 +218,44 @@ body {
   .story-grid { grid-template-columns: 1fr; }
   .lock-bar { flex-wrap: wrap; }
 }
+/* === Trang Contact Us === */
+.page-date {
+  display: block;
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.page-intro {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.section-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 2rem 0 0.8rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.sub-heading {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.email-link {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.email-link:hover {
+  color: #1d4ed8;
+}
+
+#contact-page p {
+  margin-bottom: 0.8rem;
+  line-height: 1.7;
+}
