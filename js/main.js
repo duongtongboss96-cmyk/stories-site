@@ -2,7 +2,6 @@ let stories = [];
 let currentStory = null;
 let currentChapterIndex = 0;
 
-// Tải dữ liệu
 fetch('data.json')
   .then(res => res.json())
   .then(data => {
@@ -10,12 +9,9 @@ fetch('data.json')
     renderStoryList();
   })
   .catch(err => {
-    document.getElementById('storyList').innerHTML = `
-      <p style="color:red;">Lỗi tải dữ liệu: ${err.message}</p>
-    `;
+    document.getElementById('storyList').innerHTML = `<p style="color:red;">Lỗi tải dữ liệu: ${err.message}</p>`;
   });
 
-// Hiển thị danh sách truyện
 function renderStoryList() {
   const container = document.getElementById('storyList');
   container.innerHTML = '';
@@ -25,35 +21,36 @@ function renderStoryList() {
     article.className = 'post-item';
     article.innerHTML = `
       <time class="post-date">${story.date}</time>
-      <h2 class="post-title">
-        <a href="#${story.slug}" class="story-link">${story.title}</a>
-      </h2>
-      <a href="#${story.slug}" class="read-link">Read Article →</a>
+      <h3 class="post-title">
+        <a href="#${story.id}" class="story-link">${story.title}</a>
+      </h3>
+      <div class="chapter-list">
+        ${story.chapters.map((ch, idx) => `
+          <span class="chapter-item" data-story="${story.id}" data-chapter="${idx}">
+            ${ch.title}
+          </span>
+        `).join('')}
+      </div>
     `;
     container.appendChild(article);
   });
 
-  // Gắn sự kiện nhấp vào truyện
-  document.querySelectorAll('.story-link, .read-link').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const slug = link.getAttribute('href').slice(1);
-      openStory(slug);
+  document.querySelectorAll('.chapter-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const storyId = item.getAttribute('data-story');
+      const chapterIdx = parseInt(item.getAttribute('data-chapter'));
+      openChapter(storyId, chapterIdx);
     });
   });
 }
 
-// Mở truyện cụ thể
-function openStory(slug) {
-  currentStory = stories.find(s => s.slug === slug);
+function openChapter(storyId, chapterIdx) {
+  currentStory = stories.find(s => s.id === storyId);
   if (!currentStory) return;
   
-  currentChapterIndex = 0;
+  currentChapterIndex = chapterIdx;
   
-  // Hiển thị trang đọc truyện
-  if (typeof showPage === 'function') {
-    showPage('chapter-page');
-  }
+  showPage('chapter-page');
   
   document.getElementById('story-title').textContent = currentStory.title;
   document.getElementById('story-date').textContent = currentStory.date;
@@ -62,7 +59,6 @@ function openStory(slug) {
   renderChapter();
 }
 
-// Tạo danh sách chọn chương
 function renderChapterSelect() {
   const select = document.getElementById('chapter-select');
   select.innerHTML = '';
@@ -81,22 +77,21 @@ function renderChapterSelect() {
   };
 }
 
-// Hiển thị nội dung chương hiện tại
 function renderChapter() {
   const chapter = currentStory.chapters[currentChapterIndex];
   document.getElementById('chapter-content').textContent = chapter.content;
   
-  // Cập nhật nút Lùi/Tiến
-  document.getElementById('prev-chapter').style.visibility = 
-    currentChapterIndex > 0 ? 'visible' : 'hidden';
-  document.getElementById('next-chapter').style.visibility = 
-    currentChapterIndex < currentStory.chapters.length - 1 ? 'visible' : 'hidden';
+  const hasPrev = currentChapterIndex > 0;
+  const hasNext = currentChapterIndex < currentStory.chapters.length - 1;
   
-  // Cập nhật lựa chọn trong danh sách
+  document.getElementById('prev-chapter').style.visibility = hasPrev ? 'visible' : 'hidden';
+  document.getElementById('next-chapter').style.visibility = hasNext ? 'visible' : 'hidden';
+  document.getElementById('bottom-prev').style.visibility = hasPrev ? 'visible' : 'hidden';
+  document.getElementById('bottom-next').style.visibility = hasNext ? 'visible' : 'hidden';
+  
   document.getElementById('chapter-select').value = currentChapterIndex;
 }
 
-// Nút điều hướng chương
 document.getElementById('prev-chapter').addEventListener('click', e => {
   e.preventDefault();
   if (currentChapterIndex > 0) {
@@ -112,3 +107,33 @@ document.getElementById('next-chapter').addEventListener('click', e => {
     renderChapter();
   }
 });
+
+document.getElementById('bottom-prev').addEventListener('click', e => {
+  e.preventDefault();
+  if (currentChapterIndex > 0) {
+    currentChapterIndex--;
+    renderChapter();
+  }
+});
+
+document.getElementById('bottom-next').addEventListener('click', e => {
+  e.preventDefault();
+  if (currentChapterIndex < currentStory.chapters.length - 1) {
+    currentChapterIndex++;
+    renderChapter();
+  }
+});
+
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('nav a').forEach(l => l.classList.remove('active'));
+  
+  if (pageId === 'chapter-page') {
+    document.getElementById('chapter-page').classList.add('active');
+  } else {
+    const targetPage = document.getElementById(pageId + '-page');
+    if (targetPage) targetPage.classList.add('active');
+    const activeLink = document.querySelector(`[data-page="${pageId}"]`);
+    if (activeLink) activeLink.classList.add('active');
+  }
+}
