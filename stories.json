@@ -7,11 +7,11 @@
     "totalChapters": 10,
     "chapters": [
       {
-        "number": 1,
-        "slug": "chapter-1",
-        "title": "Chapter 1 - The Revelation in the Ledger",
-        "content": "Gideon’s study smelled of old paper, leather-bound books, and the faint, expensive scent of cedarwood. It was a room where millions of dollars in tech contracts had been negotiated, yet that morning, the silence inside felt heavier than any corporate merger.\n\nHe sat at his massive mahogany desk, his laptop open alongside a dusty cardboard box he had retrieved from the back of the corporate archives. Inside were the original financial statements from seventeen years ago—the fragile, handwritten ledgers from the exact month he and Douglas Palmer had incorporated their software startup.\n\nHis phone buzzed on the desk. It was his corporate attorney, Marcus.\n\n\"Gideon, you're looking for ghosts,\" Marcus said, his voice crackling over the speakerphone. \"That company is nearly two decades old. Whatever seed money Douglas brought to the table has long since been absorbed, capitalized, and audited a dozen times over.\"\n\n\"Marcus, listen to me,\" Gideon said, his eyes scanning a faded deposit slip from a downtown Denver bank branch. \"Douglas told me his uncle funded our initial development phase with a fifty-thousand-dollar cashier's check. Do you remember that?\"\n\n\"Vaguely. We were twenty-four and desperate. Why?\"\n\n\"Because fifty thousand dollars in cash didn't come from an uncle. It came from the sale of a residential property owned by Gwen's family. And the signature on the escrow release isn't a bank officer's—it's Douglas forging Gwen's authorization, backed by a forged power of attorney.\"\n\nA sharp intake of breath echoed from the phone. \"Gideon, do you realize what you're saying? If Douglas forged a property sale to siphon her inheritance into the business, and then used that business to build a multi-million-dollar empire while claiming she 'wasn't entitled to anything'...\"\n\n\"He didn't just commit fraud against his business partners by lying about equity distribution,\" Gideon finished, his jaw tightening so hard it ached. \"He committed systematic financial abuse against his wife, using corporate shell structures to hide the assets ever since.\"\n\nGideon clicked open the digital spreadsheet containing Palmer Technologies' current asset breakdown. For years, Douglas had maintained that the company owned very little real estate, keeping assets tied up in holding companies to minimize tax liabilities and protect against market volatility. But looking at the routing numbers and the corporate registry links, Gideon noticed a recurring pattern—an offshore entity registered in the British Virgin Islands called Apex Holdings.\n\nAnd the primary beneficiary listed on the formation documents from three years ago wasn't Douglas Palmer.\n\nIt was a woman named Veronica Vance—the exact same woman Douglas had left Gwen for.\n\nDownstairs, the faint sound of a broom sweeping across the hardwood floor drifted up the stairwell. Gwen was downstairs, trying to make herself useful, trying to earn a roof over her children's heads because she believed she had nothing left in the world.\n\nGideon slammed his laptop shut, stood up so fast his chair rolled back and crashed into the bookshelf, and grabbed his car keys.\n\n\"Marcus,\" Gideon said, his voice dropping an octave into a cold, lethal calm. \"Cancel my morning meetings. Call forensic accountant Sarah Lin and tell her I need her at my office in forty minutes. We are going to audit every single dime Douglas Palmer has touched since the day he married Gwen.\"\n\n\"And Douglas?\" Marcus asked cautiously.\n\n\"Douglas is about to find out what happens when you steal from the wrong people,\" Gideon said.\n\nHe walked out of the study and paused at the top of the stairs. Gwen was in the kitchen, carefully setting out cereal bowls for Toby and Maisie. The sunlight caught the tired lines around her eyes, yet there was a quiet, unshakable dignity in the way she moved. She wasn't begging anymore. She was surviving.\n\nGideon looked down at his phone, his thumb hovering over Douglas's contact card. He didn't call him. Not yet.\n\nBecause a phone call would warn a rat. What Gideon had in mind required a trap that could snap shut without a single sound until it was far too late to escape."
-      },
+      "number": 1,
+      "slug": "chapter-1",
+      "title": "Chapter 1 - The Revelation in the Ledger",
+      "content": "Cockburn's study smelled of old paper, leather-bound books, and the faint, expensive scent of cedarwood. It was a room where millions of dollars in tech contracts had been negotiated, yet that morning, the silence felt heavier than any corporate merger. On his massive mahogany desk, his laptop open alongside a dusty cardboard box he had retrieved from the corporate archives. Inside were the original financial statements from seventeen years ago..."
+    },
       {
         "number": 2,
         "slug": "chapter-2",
@@ -68,68 +68,172 @@
       }
     ]
   },
-  {
+    {
     "id": "a108",
     "slug": "a108-she-ordered-me-not-to-wear-blue",
     "title": "A108 She Ordered Me Not to Wear Blue—Then I Saw Her Mother at the Altar",
-    "date": "Jul 05, 2026",
+    "date": "Thg 7 05, 2026",
     "totalChapters": 8,
-    "chapters": []
+    "chapters": [
+      { "number": 1, "slug": "ch-1", "title": "Chương 1", "content": "Nội dung 1..." },
+      { "number": 2, "slug": "ch-2", "title": "Chương 2", "content": "Nội dung 2..." },
+      { "number": 3, "slug": "ch-3", "title": "Chương 3", "content": "Nội dung 3..." },
+      { "number": 4, "slug": "ch-4", "title": "Chương 4", "content": "Nội dung 4..." },
+      { "number": 5, "slug": "ch-5", "title": "Chương 5", "content": "Nội dung 5..." },
+      { "number": 6, "slug": "ch-6", "title": "Chương 6", "content": "Nội dung 6..." },
+      { "number": 7, "slug": "ch-7", "title": "Chương 7", "content": "Nội dung 7..." },
+      { "number": 8, "slug": "ch-8", "title": "Chương 8", "content": "Nội dung 8..." }
+    ]
   },
-  {
+   {
     "id": "a107",
     "slug": "a107-the-mark-under-the-dirt",
-    "title": "A107 The Mark Under the Dirt: My Millionaire Husband’s Deadliest Secret",
-    "date": "Jul 03, 2026",
+    "title": "A107 The Mark Under the Dirt: My Millionaire Husband's Deadliest Secret",
+    "date": "Thg 7 03, 2026",
     "totalChapters": 6,
-    "chapters": []
+    "chapters": [
+      { "number": 1, "slug": "ch-1", "title": "Chương 1", "content": "Nội dung 1..." },
+      { "number": 2, "slug": "ch-2", "title": "Chương 2", "content": "Nội dung 2..." },
+      { "number": 3, "slug": "ch-3", "title": "Chương 3", "content": "Nội dung 3..." },
+      { "number": 4, "slug": "ch-4", "title": "Chương 4", "content": "Nội dung 4..." },
+      { "number": 5, "slug": "ch-5", "title": "Chương 5", "content": "Nội dung 5..." },
+      { "number": 6, "slug": "ch-6", "title": "Chương 6", "content": "Nội dung 6..." }
+    ]
   },
-  {
+   {
     "id": "a106",
     "slug": "a106-gatecrasher",
     "title": "A106 The Gatecrasher Who Inherited The Empire: How I Reclaimed Everything Douglas Stole",
-    "date": "Jul 06, 2026",
+    "date": "Thg 7 06, 2026",
     "totalChapters": 9,
-    "chapters": []
+    "chapters": [
+      { "number": 1, "slug": "ch-1", "title": "Chương 1", "content": "Nội dung 1..." },
+      { "number": 2, "slug": "ch-2", "title": "Chương 2", "content": "Nội dung 2..." },
+      { "number": 3, "slug": "ch-3", "title": "Chương 3", "content": "Nội dung 3..." },
+      { "number": 4, "slug": "ch-4", "title": "Chương 4", "content": "Nội dung 4..." },
+      { "number": 5, "slug": "ch-5", "title": "Chương 5", "content": "Nội dung 5..." },
+      { "number": 6, "slug": "ch-6", "title": "Chương 6", "content": "Nội dung 6..." },
+      { "number": 7, "slug": "ch-7", "title": "Chương 7", "content": "Nội dung 7..." },
+      { "number": 8, "slug": "ch-8", "title": "Chương 8", "content": "Nội dung 8..." },
+      { "number": 9, "slug": "ch-9", "title": "Chương 9", "content": "Nội dung 9..." }
+    ]
   },
-  {
+    {
     "id": "a105",
     "slug": "a105-the-roof-that-almost-ended-us",
     "title": "A105 The Roof That Almost Ended Us—And The Secret That Burned An Empire",
-    "date": "Aug 23, 2026",
+    "date": "Thg 8 23, 2026",
     "totalChapters": 12,
-    "chapters": []
+    "chapters": [
+      { "number": 1, "slug": "ch-1", "title": "Chương 1", "content": "Nội dung 1..." },
+      { "number": 2, "slug": "ch-2", "title": "Chương 2", "content": "Nội dung 2..." },
+      { "number": 3, "slug": "ch-3", "title": "Chương 3", "content": "Nội dung 3..." },
+      { "number": 4, "slug": "ch-4", "title": "Chương 4", "content": "Nội dung 4..." },
+      { "number": 5, "slug": "ch-5", "title": "Chương 5", "content": "Nội dung 5..." },
+      { "number": 6, "slug": "ch-6", "title": "Chương 6", "content": "Nội dung 6..." },
+      { "number": 7, "slug": "ch-7", "title": "Chương 7", "content": "Nội dung 7..." },
+      { "number": 8, "slug": "ch-8", "title": "Chương 8", "content": "Nội dung 8..." },
+      { "number": 9, "slug": "ch-9", "title": "Chương 9", "content": "Nội dung 9..." },
+      { "number": 10, "slug": "ch-10", "title": "Chương 10", "content": "Nội dung 10..." },
+      { "number": 11, "slug": "ch-11", "title": "Chương 11", "content": "Nội dung 11..." },
+      { "number": 12, "slug": "ch-12", "title": "Chương 12", "content": "Nội dung 12..." }
+    ]
   },
-  {
+    {
     "id": "a104",
     "slug": "a104-lake-pact",
-    "title": "A104 \"55 Years Ago, Four Boys Made a Pact by a Lake. Yesterday, Three Old Men Returned—and Triggered a Nightmare.\"",
-    "date": "Aug 19, 2026",
+    "title": "A104 55 Years Ago, Four Boys Made a Pact by a Lake. Yesterday, Three Old Men Returned—and Triggered a Nightmare.",
+    "date": "Thg 8 19, 2026",
     "totalChapters": 7,
-    "chapters": []
+    "chapters": [
+      {
+        "number": 1,
+        "slug": "chapter-1",
+        "title": "Chapter 1",
+        "content": "Nội dung chương 1 viết vào đây..."
+      },
+      {
+        "number": 2,
+        "slug": "chapter-2",
+        "title": "Chapter 2",
+        "content": "Nội dung chương 2 viết vào đây..."
+      },
+      {
+        "number": 3,
+        "slug": "chapter-3",
+        "title": "Chapter 3",
+        "content": "Nội dung chương 3 viết vào đây..."
+      },
+      {
+        "number": 4,
+        "slug": "chapter-4",
+        "title": "Chapter 4",
+        "content": "Nội dung chương 4 viết vào đây..."
+      },
+      {
+        "number": 5,
+        "slug": "chapter-5",
+        "title": "Chapter 5",
+        "content": "Nội dung chương 5 viết vào đây..."
+      },
+      {
+        "number": 6,
+        "slug": "chapter-6",
+        "title": "Chapter 6",
+        "content": "Nội dung chương 6 viết vào đây..."
+      },
+      {
+        "number": 7,
+        "slug": "chapter-7",
+        "title": "Chapter 7",
+        "content": "Nội dung chương 7 viết vào đây..."
+      }
+    ]
   },
-  {
+    {
     "id": "a103",
     "slug": "a103-sibling-secret",
-    "title": "A103 \"The Sibling Secret: When My Brother's Miracle Baby Shattered Our Family Tree\"",
-    "date": "Jun 18, 2026",
+    "title": "A103 The Sibling Secret: When My Brother's Miracle Baby Shattered Our Family Tree",
+    "date": "Thg 6 18, 2026",
     "totalChapters": 5,
-    "chapters": []
+    "chapters": [
+      { "number": 1, "slug": "ch-1", "title": "Chương 1", "content": "Nội dung 1..." },
+      { "number": 2, "slug": "ch-2", "title": "Chương 2", "content": "Nội dung 2..." },
+      { "number": 3, "slug": "ch-3", "title": "Chương 3", "content": "Nội dung 3..." },
+      { "number": 4, "slug": "ch-4", "title": "Chương 4", "content": "Nội dung 4..." },
+      { "number": 5, "slug": "ch-5", "title": "Chương 5", "content": "Nội dung 5..." }
+    ]
   },
-  {
+   {
     "id": "a100",
     "slug": "a100-four-million-setup",
     "title": "A100 The Four-Million-Dollar Setup: When a Family Dinner Turns Into a War Zone",
-    "date": "Jun 18, 2026",
+    "date": "Thg 6 18, 2026",
     "totalChapters": 4,
-    "chapters": []
+    "chapters": [
+      { "number": 1, "slug": "ch-1", "title": "Chương 1", "content": "Nội dung 1..." },
+      { "number": 2, "slug": "ch-2", "title": "Chương 2", "content": "Nội dung 2..." },
+      { "number": 3, "slug": "ch-3", "title": "Chương 3", "content": "Nội dung 3..." },
+      { "number": 4, "slug": "ch-4", "title": "Chương 4", "content": "Nội dung 4..." }
+    ]
   },
-  {
+   {
     "id": "a99",
     "slug": "a99-left-me-to-die",
     "title": "A99 They Left Me to Die for a Wedding. Then My Tactical Jacket Triggered a Federal Nightmare.",
-    "date": "Jul 28, 2026",
+    "date": "Thg 7 28, 2026",
     "totalChapters": 11,
-    "chapters": []
+    "chapters": [
+      { "number": 1, "slug": "ch-1", "title": "Chương 1", "content": "Nội dung 1..." },
+      { "number": 2, "slug": "ch-2", "title": "Chương 2", "content": "Nội dung 2..." },
+      { "number": 3, "slug": "ch-3", "title": "Chương 3", "content": "Nội dung 3..." },
+      { "number": 4, "slug": "ch-4", "title": "Chương 4", "content": "Nội dung 4..." },
+      { "number": 5, "slug": "ch-5", "title": "Chương 5", "content": "Nội dung 5..." },
+      { "number": 6, "slug": "ch-6", "title": "Chương 6", "content": "Nội dung 6..." },
+      { "number": 7, "slug": "ch-7", "title": "Chương 7", "content": "Nội dung 7..." },
+      { "number": 8, "slug": "ch-8", "title": "Chương 8", "content": "Nội dung 8..." },
+      { "number": 9, "slug": "ch-9", "title": "Chương 9", "content": "Nội dung 9..." },
+      { "number": 10, "slug": "ch-10", "title": "Chương 10", "content": "Nội dung 10..." },
+      { "number": 11, "slug": "ch-11", "title": "Chương 11", "content": "Nội dung 11..." }
+    ]
   }
-]
