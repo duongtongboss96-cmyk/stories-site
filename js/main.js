@@ -1,14 +1,19 @@
 let stories = [];
 
-fetch('data.json')
+fetch('./data.json')
   .then(res => res.json())
   .then(data => {
     stories = data;
     renderGrid();
+  })
+  .catch(err => {
+    console.error('Lỗi tải dữ liệu:', err);
+    document.getElementById('story-grid').innerHTML = '<p style="text-align:center;color:red;">Lỗi tải dữ liệu. Kiểm tra tệp data.json</p>';
   });
 
 function renderGrid() {
-  const container = document.getElementById('storyGrid');
+  const container = document.getElementById('story-grid');
+  if (!container || !stories.length) return;
   container.innerHTML = '';
   
   stories.forEach(story => {
@@ -41,14 +46,24 @@ function openDetail(id) {
 
 function showPage(pageId) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('nav a').forEach(l => l.classList.remove('active'));
+  document.querySelectorAll('.top-nav a, .sub-nav a').forEach(l => l.classList.remove('active'));
   
-  if (pageId === 'detail-page') {
-    document.getElementById('detail-page').classList.add('active');
-  } else {
-    const target = document.getElementById(pageId + '-page');
-    if (target) target.classList.add('active');
-    const activeLink = document.querySelector(`[data-page="${pageId}"]`);
-    if (activeLink) activeLink.classList.add('active');
+  if (pageId === 'all' || pageId === 'detail-page') {
+    document.getElementById('all-page').classList.add('active');
+    document.querySelector(`.sub-nav a[data-page="all"]`)?.classList.add('active');
   }
+  
+  const targetPage = document.getElementById(pageId);
+  if (targetPage) targetPage.classList.add('active');
+  
+  document.querySelector(`.top-nav a[data-page="${pageId}"]`)?.classList.add('active');
+  document.querySelector(`.sub-nav a[data-page="${pageId}"]`)?.classList.add('active');
 }
+
+document.addEventListener('click', e => {
+  const link = e.target.closest('a[data-page]');
+  if (link) {
+    e.preventDefault();
+    showPage(link.dataset.page);
+  }
+});
