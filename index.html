@@ -1,27 +1,86 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>📖 Truyện Của Tôi</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Recent Stories</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Thêm CSS riêng cho giao diện này */
+    .story-card {
+      border-bottom: 1px solid #eee;
+      padding: 1.5rem 0;
+      margin-bottom: 1rem;
+    }
+    .story-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .story-meta {
+      color: #888;
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+    }
+    .chapter-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-top: 0.8rem;
+    }
+    .chapter-item {
+      color: #0066cc;
+      cursor: pointer;
+      padding: 0.3rem 0;
+    }
+    .chapter-item:hover {
+      text-decoration: underline;
+    }
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+    }
+    .back-btn, #nextChapter {
+      color: #0066cc;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      font-size: 0.95rem;
+    }
+    .back-btn:hover, #nextChapter:hover {
+      text-decoration: underline;
+    }
+    .chapter-content {
+      margin-top: 1.5rem;
+      line-height: 1.8;
+      white-space: pre-line;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>📖 Bộ Sưu Tập Truyện</h1>
-    <p>Những câu chuyện mình viết, dành cho bạn</p>
+  <header class="site-header">
+    <nav>
+      <a href="index.html" class="active">Recent Stories</a>
+      <a href="#">Blog</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
   </header>
 
-  <main id="app">
-    <div class="story-list" id="storyList"></div>
+  <main class="container">
+    <div id="storyList"></div>
 
-    <div class="chapter-view" id="chapterView" style="display: none;">
-      <button class="back-btn" id="backBtn">← Quay lại</button>
+    <div id="chapterView" style="display: none;">
+      <button class="back-btn" id="backBtn">← Back to all stories</button>
       <h2 id="chapterTitle"></h2>
       <div class="chapter-content" id="chapterContent"></div>
       <div class="nav-buttons">
-        <button class="back-btn" id="prevChapter">← Chương Trước</button>
-        <button id="nextChapter">Chương Sau →</button>
+        <button class="back-btn" id="prevChapter">← Previous Chapter</button>
+        <button id="nextChapter">Next Chapter →</button>
       </div>
     </div>
   </main>
@@ -31,7 +90,8 @@
     let currentStory = null;
     let currentChapterIndex = 0;
 
-    fetch('stories.json')
+    // Tải dữ liệu từ data.json
+    fetch('data.json')
       .then(res => res.json())
       .then(data => {
         stories = Array.isArray(data) ? data : [data];
@@ -40,7 +100,7 @@
       .catch(err => {
         document.getElementById('storyList').innerHTML = `
           <div class="story-card">
-            <p style="color:red;">Lỗi: Kiểm tra file stories.json đã lưu đúng chưa</p>
+            <p style="color:red;">Lỗi: Kiểm tra tệp data.json đã tải lên đúng chưa</p>
             <p>${err}</p>
           </div>
         `;
@@ -54,12 +114,13 @@
         const card = document.createElement('div');
         card.className = 'story-card';
         card.innerHTML = `
-          <div class="story-title">${story.title}</div>
-          <div class="story-meta">📅 ${story.date} · 📚 ${story.totalChapters} chương</div>
+          <time class="post-date">${story.date}</time>
+          <h2 class="post-title">${story.title}</h2>
+          <div class="story-meta">📚 ${story.totalChapters} chapters</div>
           <div class="chapter-list">
             ${story.chapters.map(ch => `
               <div class="chapter-item" data-story="${story.id}" data-chapter="${ch.number}">
-                ${ch.number}. ${ch.title}
+                ${ch.title}
               </div>
             `).join('')}
           </div>
@@ -82,14 +143,17 @@
       
       currentChapterIndex = currentStory.chapters.findIndex(c => c.number === chapterNumber);
       if (currentChapterIndex === -1) return;
-
-      const chapter = currentStory.chapters[currentChapterIndex];
+      
+      showCurrentChapter();
       
       document.getElementById('storyList').style.display = 'none';
       document.getElementById('chapterView').style.display = 'block';
+    }
+
+    function showCurrentChapter() {
+      const chapter = currentStory.chapters[currentChapterIndex];
       document.getElementById('chapterTitle').textContent = chapter.title;
       document.getElementById('chapterContent').textContent = chapter.content;
-      
       updateNavButtons();
     }
 
@@ -101,13 +165,15 @@
       nextBtn.style.visibility = currentChapterIndex < currentStory.chapters.length - 1 ? 'visible' : 'hidden';
     }
 
+    // Nút quay lại
     document.getElementById('backBtn').addEventListener('click', () => {
-      document.getElementById('storyList').style.display = '';
+      document.getElementById('storyList').style.display = 'block';
       document.getElementById('chapterView').style.display = 'none';
       currentStory = null;
       currentChapterIndex = 0;
     });
 
+    // Điều hướng chương
     document.getElementById('prevChapter').addEventListener('click', () => {
       if (currentChapterIndex > 0) {
         currentChapterIndex--;
@@ -121,13 +187,6 @@
         showCurrentChapter();
       }
     });
-
-    function showCurrentChapter() {
-      const chapter = currentStory.chapters[currentChapterIndex];
-      document.getElementById('chapterTitle').textContent = chapter.title;
-      document.getElementById('chapterContent').textContent = chapter.content;
-      updateNavButtons();
-    }
   </script>
 </body>
 </html>
