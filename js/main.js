@@ -2,6 +2,7 @@ let stories = [];
 let currentStory = null;
 let currentChapterIndex = 0;
 
+// Tải dữ liệu
 fetch('data.json')
   .then(res => res.json())
   .then(data => {
@@ -10,89 +11,104 @@ fetch('data.json')
   })
   .catch(err => {
     document.getElementById('storyList').innerHTML = `
-      <div class="story-card">
-        <p style="color:red;">Lỗi: Kiểm tra tệp data.json đã tải lên đúng chưa</p>
-        <p>${err}</p>
-      </div>
+      <p style="color:red;">Lỗi tải dữ liệu: ${err.message}</p>
     `;
   });
 
+// Hiển thị danh sách truyện
 function renderStoryList() {
   const container = document.getElementById('storyList');
   container.innerHTML = '';
   
   stories.forEach(story => {
-    const card = document.createElement('div');
-    card.className = 'story-card';
-    card.innerHTML = `
+    const article = document.createElement('article');
+    article.className = 'post-item';
+    article.innerHTML = `
       <time class="post-date">${story.date}</time>
-      <h2 class="post-title">${story.title}</h2>
-      <div class="story-meta">📚 ${story.totalChapters} chapters</div>
-      <div class="chapter-list">
-        ${story.chapters.map(ch => `
-          <div class="chapter-item" data-story="${story.id}" data-chapter="${ch.number}">
-            ${ch.title}
-          </div>
-        `).join('')}
-      </div>
+      <h2 class="post-title">
+        <a href="#${story.slug}" class="story-link">${story.title}</a>
+      </h2>
+      <a href="#${story.slug}" class="read-link">Read Article →</a>
     `;
-    container.appendChild(card);
+    container.appendChild(article);
   });
 
-  document.querySelectorAll('.chapter-item').forEach(item => {
-    item.addEventListener('click', () => {
-      const storyId = item.getAttribute('data-story');
-      const chapterNum = parseInt(item.getAttribute('data-chapter'));
-      openChapter(storyId, chapterNum);
+  // Gắn sự kiện nhấp vào truyện
+  document.querySelectorAll('.story-link, .read-link').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const slug = link.getAttribute('href').slice(1);
+      openStory(slug);
     });
   });
 }
 
-function openChapter(storyId, chapterNumber) {
-  currentStory = stories.find(s => s.id === storyId);
+// Mở truyện cụ thể
+function openStory(slug) {
+  currentStory = stories.find(s => s.slug === slug);
   if (!currentStory) return;
   
-  currentChapterIndex = currentStory.chapters.findIndex(c => c.number === chapterNumber);
-  if (currentChapterIndex === -1) return;
-  
-  showCurrentChapter();
-  
-  document.getElementById('storyList').style.display = 'none';
-  document.getElementById('chapterView').style.display = 'block';
-}
-
-function showCurrentChapter() {
-  const chapter = currentStory.chapters[currentChapterIndex];
-  document.getElementById('chapterTitle').textContent = chapter.title;
-  document.getElementById('chapterContent').textContent = chapter.content;
-  updateNavButtons();
-}
-
-function updateNavButtons() {
-  const prevBtn = document.getElementById('prevChapter');
-  const nextBtn = document.getElementById('nextChapter');
-  
-  prevBtn.style.visibility = currentChapterIndex > 0 ? 'visible' : 'hidden';
-  nextBtn.style.visibility = currentChapterIndex < currentStory.chapters.length - 1 ? 'visible' : 'hidden';
-}
-
-document.getElementById('backBtn').addEventListener('click', () => {
-  document.getElementById('storyList').style.display = 'block';
-  document.getElementById('chapterView').style.display = 'none';
-  currentStory = null;
   currentChapterIndex = 0;
-});
+  
+  // Hiển thị trang đọc truyện
+  if (typeof showPage === 'function') {
+    showPage('chapter-page');
+  }
+  
+  document.getElementById('story-title').textContent = currentStory.title;
+  document.getElementById('story-date').textContent = currentStory.date;
+  
+  renderChapterSelect();
+  renderChapter();
+}
 
-document.getElementById('prevChapter').addEventListener('click', () => {
+// Tạo danh sách chọn chương
+function renderChapterSelect() {
+  const select = document.getElementById('chapter-select');
+  select.innerHTML = '';
+  
+  currentStory.chapters.forEach((ch, idx) => {
+    const opt = document.createElement('option');
+    opt.value = idx;
+    opt.textContent = ch.title;
+    if (idx === currentChapterIndex) opt.selected = true;
+    select.appendChild(opt);
+  });
+  
+  select.onchange = () => {
+    currentChapterIndex = parseInt(select.value);
+    renderChapter();
+  };
+}
+
+// Hiển thị nội dung chương hiện tại
+function renderChapter() {
+  const chapter = currentStory.chapters[currentChapterIndex];
+  document.getElementById('chapter-content').textContent = chapter.content;
+  
+  // Cập nhật nút Lùi/Tiến
+  document.getElementById('prev-chapter').style.visibility = 
+    currentChapterIndex > 0 ? 'visible' : 'hidden';
+  document.getElementById('next-chapter').style.visibility = 
+    currentChapterIndex < currentStory.chapters.length - 1 ? 'visible' : 'hidden';
+  
+  // Cập nhật lựa chọn trong danh sách
+  document.getElementById('chapter-select').value = currentChapterIndex;
+}
+
+// Nút điều hướng chương
+document.getElementById('prev-chapter').addEventListener('click', e => {
+  e.preventDefault();
   if (currentChapterIndex > 0) {
     currentChapterIndex--;
-    showCurrentChapter();
+    renderChapter();
   }
 });
 
-document.getElementById('nextChapter').addEventListener('click', () => {
+document.getElementById('next-chapter').addEventListener('click', e => {
+  e.preventDefault();
   if (currentChapterIndex < currentStory.chapters.length - 1) {
     currentChapterIndex++;
-    showCurrentChapter();
+    renderChapter();
   }
 });
