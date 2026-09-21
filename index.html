@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,150 +7,103 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- === Tiêu đề chính === -->
-  <header class="site-title">
-    <h1>unknown</h1>
+  <!-- === Header chính: Tên trang + Menu trên cùng bên phải === -->
+  <header class="site-top">
+    <div class="site-brand">unknown</div>
+    <nav class="top-nav">
+      <a href="#" data-page="blog">Blog</a>
+      <a href="#" data-page="contact">Contact Us</a>
+      <a href="#" data-page="terms">Terms and Conditions</a>
+    </nav>
   </header>
 
-  <!-- === Menu chính === -->
-  <nav class="main-nav">
-    <a href="#" data-page="all" class="active">Tất cả</a>
-    <a href="#" data-page="stories">Truyện</a>
-    <a href="#" data-page="film">Phim</a>
-    <a href="#" data-page="story">Câu chuyện</a>
-    <a href="#" data-page="other">Khác</a>
-  </nav>
-
-  <!-- === Menu phụ dưới === -->
+  <!-- === Menu phụ: All / Historias / Pelicula / Story === -->
   <nav class="sub-nav">
-    <a href="#" data-page="blog" class="active">Blog</a>
-    <a href="#" data-page="contact">Liên hệ</a>
-    <a href="#" data-page="terms">Điều khoản sử dụng</a>
+    <a href="#" data-page="all" class="active">All</a>
+    <a href="#" data-page="historias">Historias</a>
+    <a href="#" data-page="pelicula">Pelicula</a>
+    <a href="#" data-page="story">Story</a>
+    <a href="#" data-page="story2">Story</a>
   </nav>
 
   <main class="container">
-    <!-- === Tất cả / Tin tức gần đây === -->
+    <!-- === Trang Chính: Recent Stories === -->
     <div id="all-page" class="page active">
-      <h2>Tin tức gần đây</h2>
-      <p class="subtitle">Những cập nhật, phân tích và nhận định mới nhất.</p>
-      <div id="storyList" class="posts-list"></div>
-      <div class="back-all">
-        <a href="#" id="back-to-all">← Trở lại tất cả các bài viết</a>
+      <h1 class="page-title">Recent Stories</h1>
+      <p class="page-subtitle">Latest updates, analysis, and insights from unknown.</p>
+      <div id="storyGrid" class="story-grid"></div>
+    </div>
+
+    <!-- === Trang Đọc bài viết === -->
+    <div id="detail-page" class="page">
+      <a href="#" id="back-link" class="back-link">← Back to Recent Stories</a>
+      <img id="detail-image" class="detail-img" alt="">
+      <time id="detail-date" class="detail-date"></time>
+      <h1 id="detail-title" class="detail-title"></h1>
+      <div id="detail-content" class="detail-text"></div>
+      
+      <!-- === Thanh khóa nội dung === -->
+      <div class="lock-bar">
+        <div class="lock-icon">🔒</div>
+        <div class="lock-text">
+          <p>The rest of this article is locked</p>
+          <p class="lock-small">Watch one short ad to unlock and keep reading.</p>
+        </div>
+        <button class="unlock-btn">Unlock</button>
       </div>
     </div>
 
-    <!-- === Đọc nội dung chương === -->
-    <div id="chapter-page" class="page">
-      <a href="#" id="back-link" class="back-link">← Trở lại tất cả</a>
-      <time id="story-date" class="post-date"></time>
-      <h2 id="story-title"></h2>
-      
-      <div class="chapter-nav">
-        <select id="chapter-select"></select>
-        <a href="#" id="prev-chapter" class="chapter-link">← Trước đó</a>
-        <a href="#" id="next-chapter" class="chapter-link">Tiếp theo →</a>
-      </div>
-      
-      <div id="chapter-content" class="post-content"></div>
-      
-      <div class="bottom-nav">
-        <a href="#" id="bottom-prev">← Trước đó</a>
-        <a href="#" id="bottom-next">Tiếp theo →</a>
-      </div>
-    </div>
-
-    <!-- === Blog === -->
+    <!-- === Các trang phụ === -->
     <div id="blog-page" class="page">
-      <h2>Blog</h2>
-      <p class="subtitle">Những suy nghĩ, ghi chú và những điều hậu trường.</p>
-      
-      <article class="post-item">
-        <time class="post-date">21/09/2026</time>
-        <h3 class="post-title">
-          <a href="#">Tại sao tôi viết về sự kiên cường và khởi đầu mới</a>
-        </h3>
-        <p>Mỗi câu chuyện đều bắt nguồn từ một sự thật nhỏ — chúng ta mạnh mẽ hơn mình tưởng.</p>
-        <a href="#" class="read-link">Đọc →</a>
-      </article>
-
-      <article class="post-item">
-        <time class="post-date">20/09/2026</time>
-        <h3 class="post-title">
-          <a href="#">Tiếp tục bước đi dù không ai nhìn thấy</a>
-        </h3>
-        <p>Thành công không đến trong một ngày, mà đến từ những ngày tháng lặng lẽ cố gắng.</p>
-        <a href="#" class="read-link">Đọc →</a>
-      </article>
+      <h1 class="page-title">Blog</h1>
+      <p class="page-subtitle">Thoughts and notes from unknown.</p>
     </div>
-
-    <!-- === Liên hệ === -->
     <div id="contact-page" class="page">
-      <h2>Liên hệ</h2>
-      <p class="subtitle">Có điều muốn nói, hợp tác, hay chỉ chào hỏi?</p>
-      
-      <div class="contact-text">
-        <p><strong>Email</strong><br>contact@example.com</p>
-        <p><strong>Hợp tác</strong><br>Mở ra cho ý tưởng và dự án cùng phát triển.</p>
-        <p class="note">Tôi sẽ trả lời sớm nhất có thể. Cảm ơn đã ghé thăm!</p>
-      </div>
+      <h1 class="page-title">Contact Us</h1>
+      <p class="page-subtitle">Get in touch with us.</p>
     </div>
-
-    <!-- === Điều khoản sử dụng === -->
     <div id="terms-page" class="page">
-      <h2>Điều khoản sử dụng</h2>
-      <p class="subtitle">Quy định khi sử dụng nội dung trên trang.</p>
-      
-      <div class="about-text">
-        <p><strong>1. Nội dung</strong></p>
-        <p>Tất cả câu chuyện, bài viết trên trang đều là sáng tác gốc. Không sao chép, phát hành lại khi chưa có sự cho phép.</p>
-        <br>
-        <p><strong>2. Sử dụng</strong></p>
-        <p>Bạn được đọc, chia sẻ với mục đích tham khảo. Vui lòng ghi rõ nguồn khi trích dẫn.</p>
-        <br>
-        <p><strong>3. Thay đổi</strong></p>
-        <p>Các điều khoản có thể được cập nhật mà không báo trước. Vui lòng kiểm tra định kỳ.</p>
-      </div>
+      <h1 class="page-title">Terms and Conditions</h1>
+      <p class="page-subtitle">Terms of use for this site.</p>
     </div>
-
-    <!-- === Các trang tạm === -->
-    <div id="stories-page" class="page">
-      <h2>Truyện</h2>
-      <p class="subtitle">Danh sách các câu chuyện đang cập nhật...</p>
+    <div id="historias-page" class="page">
+      <h1 class="page-title">Historias</h1>
+      <p class="page-subtitle">Stories collection.</p>
     </div>
-    <div id="film-page" class="page">
-      <h2>Phim</h2>
-      <p class="subtitle">Nội dung đang xây dựng...</p>
+    <div id="pelicula-page" class="page">
+      <h1 class="page-title">Pelicula</h1>
+      <p class="page-subtitle">Film related stories.</p>
     </div>
     <div id="story-page" class="page">
-      <h2>Câu chuyện</h2>
-      <p class="subtitle">Nội dung đang xây dựng...</p>
+      <h1 class="page-title">Story</h1>
+      <p class="page-subtitle">More stories.</p>
     </div>
-    <div id="other-page" class="page">
-      <h2>Khác</h2>
-      <p class="subtitle">Nội dung đang xây dựng...</p>
+    <div id="story2-page" class="page">
+      <h1 class="page-title">Story</h1>
+      <p class="page-subtitle">Additional stories.</p>
     </div>
   </main>
 
   <script src="js/main.js"></script>
   <script>
-    const allNavLinks = document.querySelectorAll('nav a');
+    const allNavs = document.querySelectorAll('nav a');
     const pages = document.querySelectorAll('.page');
 
     function showPage(pageId) {
       pages.forEach(p => p.classList.remove('active'));
-      allNavLinks.forEach(l => l.classList.remove('active'));
+      allNavs.forEach(l => l.classList.remove('active'));
       
-      if (pageId === 'chapter-page') {
-        document.getElementById('chapter-page').classList.add('active');
+      if (pageId === 'detail-page') {
+        document.getElementById('detail-page').classList.add('active');
       } else {
-        const targetPage = document.getElementById(pageId + '-page');
-        if (targetPage) targetPage.classList.add('active');
+        const target = document.getElementById(pageId + '-page');
+        if (target) target.classList.add('active');
         const activeLink = document.querySelector(`[data-page="${pageId}"]`);
         if (activeLink) activeLink.classList.add('active');
       }
     }
 
-    allNavLinks.forEach(link => {
+    allNavs.forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
         showPage(link.getAttribute('data-page'));
@@ -158,10 +111,6 @@
     });
 
     document.getElementById('back-link').addEventListener('click', e => {
-      e.preventDefault();
-      showPage('all');
-    });
-    document.getElementById('back-to-all')?.addEventListener('click', e => {
       e.preventDefault();
       showPage('all');
     });
