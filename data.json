@@ -1,22 +1,26 @@
 [
   {
     "id": "a110",
+    "slug": "a110-tuoi-than-but-pha",
     "title": "A110: Từ tủi thân đến bứt phá",
-    "date": "2026-09-21",
+    "date": "Sep 21, 2026",
     "totalChapters": 3,
     "chapters": [
       {
         "number": 1,
+        "slug": "chuong-1",
         "title": "Chương 1: Đêm tân hôn lạnh lẽo",
         "content": "Mười hai giờ trưa, phòng tân hôn lặng ngắt như tờ. Cô đứng trước gương, chiếc váy cưới trắng tinh khôi vẫn chưa cởi bỏ. Bên ngoài có tiếng cười nói rộn ràng, nhưng trong này chỉ có cô và nỗi cô đơn bao trùm.\n\nAnh chưa từng bước chân vào phòng kể từ khi lễ cưới kết thúc. Cô biết anh ở phòng khách, bên cạnh người con gái mà anh thực sự yêu thương.\n\n\"Tôi là ai trong cuộc đời anh?\" Cô tự hỏi, nước mắt lặng lẽ rơi trên gương mặt tái nhợt."
       },
       {
         "number": 2,
+        "slug": "chuong-2",
         "title": "Chương 2: Lời hứa đổi thay",
         "content": "Ba tháng sau, mọi thứ vẫn không thay đổi. Anh về nhà càng lúc càng muộn, ánh mắt khi nhìn cô ngày càng lạnh nhạt. Cô không hỏi, không khóc, chỉ im lặng chờ đợi.\n\nMột buổi tối mưa to, anh về trong mùi nước hoa lạ. Cô đứng dậy định rót nước, anh lạnh lùng nói: \"Chúng ta chia tay đi.\"\n\nTim cô như bị bóp nghẹt, nhưng cô vẫn ngẩng đầu: \"Được. Chỉ mong sau này, anh không hối hận.\""
       },
       {
         "number": 3,
+        "slug": "chuong-3",
         "title": "Chương 3: Đứng trên đỉnh cao nhìn lại",
         "content": "Năm năm sau.\n\nTừ một cô gái yếu đuối, cô đã trở thành giám đốc điều hành công ty riêng. Ngày cô trở về, không phải để trả thù, mà để chứng minh: không có anh, cô vẫn sống tốt, thậm chí rực rỡ hơn gấp trăm lần.\n\nGặp lại anh tại sự kiện, anh ngỡ ngàng nhìn cô. Cô mỉm cười, nhẹ nhàng lướt qua như gió thoảng. Bây giờ, người đứng sau lưng anh hối hận không còn là cô.\n\nCuộc đời này, không cần ai thương hại, tự mình tỏa sáng là ánh sáng đẹp nhất."
       }
@@ -24,17 +28,20 @@
   },
   {
     "id": "khoi-nghiep",
+    "slug": "khoi-nghiep-tu-hai-ban-tay-trang",
     "title": "Khởi nghiệp từ hai bàn tay trắng",
-    "date": "2026-09-20",
+    "date": "Sep 20, 2026",
     "totalChapters": 2,
     "chapters": [
       {
         "number": 1,
+        "slug": "chuong-1",
         "title": "Chương 1: Bước chân không có gì",
         "content": "Ngày ra trường, tôi có trong tay tấm bằng loại giỏi và một ngân hàng số dư bằng không. Bạn bè đều xin được việc tốt, chỉ tôi lang thang trên phố, tự hỏi con đường mình đi bắt đầu từ đâu.\n\nTôi thuê một gác xép nhỏ, ba mét vuông đủ đặt giường và bàn làm việc. Buổi tối làm freelancer, ban ngày đi học hỏi, tìm hiểu mọi thứ có thể. Không có vốn, chỉ có thời gian và một niềm tin không bao giờ tắt.\n\n\"Ngày nào đó, tôi sẽ xây dựng được thứ của riêng mình.\" Tôi viết dòng chữ này lên tường, mỗi sáng thức dậy đều nhìn thấy."
       },
       {
         "number": 2,
+        "slug": "chuong-2",
         "title": "Chương 2: Thành quả của kiên trì",
         "content": "Ba năm, một nghìn ngày đêm không ngủ yên. Có lúc không còn tiền ăn, có lúc sản phẩm đầu tay thất bại hoàn toàn, có lúc muốn vứt hết mọi thứ mà đi.\n\nNhưng tôi vẫn đứng lên. Đổi hướng, học hỏi, cải thiện, không bao giờ lùi bước.\n\nNgày công ty chính thức ra mắt, tôi đứng trước cửa văn phòng mới, nhìn thấy tên mình trên tấm biển. Không phải giàu có ngay, nhưng đó là thành quả của chính đôi tay mình tạo ra.\n\nKhông có gì là không thể, chỉ sợ mình không đủ kiên trì đến cùng."
       }
