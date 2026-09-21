@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>unknown</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>trang web truyện</title>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <!-- === Header chính: Tên trang + Menu trên cùng bên phải === -->
   <header class="site-top">
-    <div class="site-brand">unknown</div>
+    <div class="site-brand">trang web truyện</div>
     <nav class="top-nav">
       <a href="#" data-page="blog">Blog</a>
       <a href="#" data-page="contact">Contact Us</a>
@@ -17,32 +16,28 @@
     </nav>
   </header>
 
-  <!-- === Menu phụ: All / Historias / Pelicula / Story === -->
   <nav class="sub-nav">
     <a href="#" data-page="all" class="active">All</a>
     <a href="#" data-page="historias">Historias</a>
     <a href="#" data-page="pelicula">Pelicula</a>
     <a href="#" data-page="story">Story</a>
-    <a href="#" data-page="story2">Story</a>
   </nav>
 
   <main class="container">
-    <!-- === Trang Chính: Recent Stories === -->
+    <!-- Trang Chính -->
     <div id="all-page" class="page active">
       <h1 class="page-title">Recent Stories</h1>
-      <p class="page-subtitle">Latest updates, analysis, and insights from unknown.</p>
-      <div id="storyGrid" class="story-grid"></div>
+      <p class="page-subtitle">Latest updates, analysis, and insights.</p>
+      <div id="story-grid" class="story-grid"></div>
     </div>
 
-    <!-- === Trang Đọc bài viết === -->
+    <!-- Trang Chi Tiết -->
     <div id="detail-page" class="page">
-      <a href="#" id="back-link" class="back-link">← Back to Recent Stories</a>
+      <a href="#" data-page="all" class="back-link">← Back to Recent Stories</a>
       <img id="detail-image" class="detail-img" alt="">
       <time id="detail-date" class="detail-date"></time>
       <h1 id="detail-title" class="detail-title"></h1>
       <div id="detail-content" class="detail-text"></div>
-      
-      <!-- === Thanh khóa nội dung === -->
       <div class="lock-bar">
         <div class="lock-icon">🔒</div>
         <div class="lock-text">
@@ -53,17 +48,17 @@
       </div>
     </div>
 
-    <!-- === Trang Blog === -->
+    <!-- Trang Blog -->
     <div id="blog-page" class="page">
       <h1 class="page-title">Blog</h1>
-      <p class="page-subtitle">Thoughts and notes from unknown.</p>
+      <p class="page-subtitle">Coming soon...</p>
     </div>
 
-    <!-- === Trang Contact Us === -->
+    <!-- Trang Contact Us -->
     <div id="contact-page" class="page">
       <time class="page-date">Feb 24, 2026</time>
       <h1 class="page-title">Contact Us</h1>
-      <p class="page-intro">We'd love to hear from you! Whether you have a question about our features, pricing, need a demo, or would like to explore a business opportunity, our team is ready to assist you.</p>
+      <p class="page-intro">We'd love to hear from you! Whether you have a question about our services, pricing, need a demo, or would like to explore a business opportunity, our team is ready to assist you.</p>
 
       <h2 class="section-heading">Get in Touch</h2>
       <p>Please fill out the contact form below or reach out to us directly using the information provided.</p>
@@ -88,13 +83,13 @@
       <p>Our team is available during business hours to assist with general questions, technical support, and other inquiries.</p>
 
       <h2 class="section-heading">Report Abuse or Content Issues</h2>
-      <p>If you encounter inappropriate content or have concerns about a specific post or activity on our platform, please contact our team using the email address above. We take content-related concerns seriously and will review them promptly.</p>
+      <p>If you encounter inappropriate content or have concerns about a post or activity on our platform, please contact our team using the email above. We take content-related concerns seriously and will review them promptly.</p>
 
       <h2 class="section-heading">Business Inquiries</h2>
-      <p>For partnership opportunities, advertising, or other business-related inquiries, please contact us using the information provided above. We look forward to hearing from you and exploring opportunities to work together.</p>
+      <p>For partnership opportunities, advertising, or other business-related inquiries, please contact us. We look forward to hearing from you and exploring opportunities to work together.</p>
     </div>
 
-    <!-- === Trang Terms and Conditions === -->
+    <!-- Trang Terms and Conditions -->
     <div id="terms-page" class="page">
       <time class="page-date">Cập nhật lần cuối: Tháng 2 năm 2026</time>
       <h1 class="page-title">Điều khoản và Điều kiện</h1>
@@ -137,61 +132,23 @@
       <p>Nếu bạn có bất kỳ thắc mắc nào về các Điều khoản này, vui lòng liên hệ với chúng tôi.</p>
     </div>
 
-    <!-- === Trang Historias === -->
+    <!-- Trang Khác -->
     <div id="historias-page" class="page">
       <h1 class="page-title">Historias</h1>
       <p class="page-subtitle">Stories collection.</p>
     </div>
 
-    <!-- === Trang Pelicula === -->
     <div id="pelicula-page" class="page">
       <h1 class="page-title">Pelicula</h1>
       <p class="page-subtitle">Film related stories.</p>
     </div>
 
-    <!-- === Trang Story === -->
     <div id="story-page" class="page">
       <h1 class="page-title">Story</h1>
       <p class="page-subtitle">More stories.</p>
     </div>
-
-    <!-- === Trang Story 2 === -->
-    <div id="story2-page" class="page">
-      <h1 class="page-title">Story</h1>
-      <p class="page-subtitle">Additional stories.</p>
-    </div>
   </main>
 
-  <script src="js/main.js"></script>
-  <script>
-    const allNavs = document.querySelectorAll('nav a');
-    const pages = document.querySelectorAll('.page');
-
-    function showPage(pageId) {
-      pages.forEach(p => p.classList.remove('active'));
-      allNavs.forEach(l => l.classList.remove('active'));
-      
-      if (pageId === 'detail-page') {
-        document.getElementById('detail-page').classList.add('active');
-      } else {
-        const target = document.getElementById(pageId + '-page');
-        if (target) target.classList.add('active');
-        const activeLink = document.querySelector(`[data-page="${pageId}"]`);
-        if (activeLink) activeLink.classList.add('active');
-      }
-    }
-
-    allNavs.forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        showPage(link.getAttribute('data-page'));
-      });
-    });
-
-    document.getElementById('back-link').addEventListener('click', e => {
-      e.preventDefault();
-      showPage('all');
-    });
-  </script>
+  <script src="./js/main.js"></script>
 </body>
 </html>
