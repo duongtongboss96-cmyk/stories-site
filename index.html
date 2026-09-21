@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recent Stories</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .story-card {border-bottom: 1px solid #eee; padding: 1.5rem 0;}
+    .story-meta {color: #888; font-size: 0.9rem; margin: 0.5rem 0 1rem;}
+    .chapter-list {display: flex; flex-direction: column; gap: 0.4rem;}
+    .chapter-item {color: #0066cc; cursor: pointer; padding: 0.3rem 0;}
+    .chapter-item:hover {text-decoration: underline;}
+    .nav-buttons {display: flex; justify-content: space-between; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee;}
+    .back-btn, #nextChapter {color: #0066cc; background: none; border: none; cursor: pointer; font-size: 0.95rem;}
+    .back-btn:hover, #nextChapter:hover {text-decoration: underline;}
+    .chapter-content {margin-top: 1.5rem; line-height: 1.8; white-space: pre-line;}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav>
+      <a href="index.html" class="active">Recent Stories</a>
+      <a href="#">Blog</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+  <main class="container">
+    <div id="storyList"></div>
+    <div id="chapterView" style="display: none;">
+      <button class="back-btn" id="backBtn">← Back to all stories</button>
+      <h2 id="chapterTitle"></h2>
+      <div class="chapter-content" id="chapterContent"></div>
+      <div class="nav-buttons">
+        <button class="back-btn" id="prevChapter">← Previous Chapter</button>
+        <button id="nextChapter">Next Chapter →</button>
+      </div>
+    </div>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>
