@@ -5,39 +5,140 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recent Stories</title>
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    .story-card {border-bottom: 1px solid #eee; padding: 1.5rem 0;}
-    .story-meta {color: #888; font-size: 0.9rem; margin: 0.5rem 0 1rem;}
-    .chapter-list {display: flex; flex-direction: column; gap: 0.4rem;}
-    .chapter-item {color: #0066cc; cursor: pointer; padding: 0.3rem 0;}
-    .chapter-item:hover {text-decoration: underline;}
-    .nav-buttons {display: flex; justify-content: space-between; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee;}
-    .back-btn, #nextChapter {color: #0066cc; background: none; border: none; cursor: pointer; font-size: 0.95rem;}
-    .back-btn:hover, #nextChapter:hover {text-decoration: underline;}
-    .chapter-content {margin-top: 1.5rem; line-height: 1.8; white-space: pre-line;}
-  </style>
 </head>
 <body>
   <header class="site-header">
     <nav>
-      <a href="index.html" class="active">Recent Stories</a>
-      <a href="#">Blog</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+      <a href="#" data-page="stories" class="active">Recent Stories</a>
+      <a href="#" data-page="blog">Blog</a>
+      <a href="#" data-page="about">About</a>
+      <a href="#" data-page="contact">Contact</a>
     </nav>
   </header>
+
   <main class="container">
-    <div id="storyList"></div>
-    <div id="chapterView" style="display: none;">
-      <button class="back-btn" id="backBtn">← Back to all stories</button>
-      <h2 id="chapterTitle"></h2>
-      <div class="chapter-content" id="chapterContent"></div>
-      <div class="nav-buttons">
-        <button class="back-btn" id="prevChapter">← Previous Chapter</button>
-        <button id="nextChapter">Next Chapter →</button>
+    <!-- === Trang Danh sách truyện === -->
+    <div id="stories-page" class="page active">
+      <h1>Recent Stories</h1>
+      <p class="subtitle">Latest updates, analysis, and insights.</p>
+      <div id="storyList" class="posts-list"></div>
+      <div class="pagination">
+        <a href="#" class="prev">← Previous</a>
+        <a href="#" class="next">Next →</a>
+      </div>
+    </div>
+
+    <!-- === Trang Đọc truyện === -->
+    <div id="chapter-page" class="page">
+      <a href="#" id="back-link" class="back-link">← Back to all stories</a>
+      <h1 id="story-title"></h1>
+      <time id="story-date" class="post-date"></time>
+      
+      <div id="chapter-nav" class="chapter-nav">
+        <select id="chapter-select"></select>
+        <a href="#" id="prev-chapter" class="chapter-link">← Prev</a>
+        <a href="#" id="next-chapter" class="chapter-link">Next →</a>
+      </div>
+      
+      <div id="chapter-content" class="post-content"></div>
+    </div>
+
+    <!-- === Trang Blog === -->
+    <div id="blog-page" class="page">
+      <h1>Blog</h1>
+      <p class="subtitle">Thoughts, writing notes, and behind the scenes.</p>
+      
+      <article class="post-item">
+        <time class="post-date">Sep 21, 2026</time>
+        <h2 class="post-title">
+          <a href="#">Why I Write Stories About Resilience and New Beginnings</a>
+        </h2>
+        <p>Every story starts with a small truth — that we are stronger than we think. Here's why these themes matter to me...</p>
+        <a href="#" class="read-link">Read Article →</a>
+      </article>
+
+      <article class="post-item">
+        <time class="post-date">Sep 20, 2026</time>
+        <h2 class="post-title">
+          <a href="#">On Showing Up Even When No One Is Watching</a>
+        </h2>
+        <p>Success doesn't happen overnight. It happens in the quiet days when you keep going anyway...</p>
+        <a href="#" class="read-link">Read Article →</a>
+      </article>
+
+      <article class="post-item">
+        <time class="post-date">Sep 19, 2026</time>
+        <h2 class="post-title">
+          <a href="#">Your Story Isn't Over Yet — It's Just Changing Chapters</a>
+        </h2>
+        <p>When life rewrites your plans, that's not the end — it's the start of something better...</p>
+        <a href="#" class="read-link">Read Article →</a>
+      </article>
+    </div>
+
+    <!-- === Trang About === -->
+    <div id="about-page" class="page">
+      <h1>About</h1>
+      <p class="subtitle">A little about the stories and the person behind them.</p>
+      
+      <div style="line-height:1.8;">
+        <p>Welcome — this is a place for stories that stay with you.</p>
+        <br>
+        <p>I write about people finding their way back to themselves. About quiet strength, unexpected turns, and the moments that change everything.</p>
+        <br>
+        <p>These aren't just words on a screen. They're reminders that second chances exist, that people can grow, and that the chapter you're in right now — even the hard one — is leading you somewhere better.</p>
+        <br>
+        <p>Thank you for reading. 💛</p>
+      </div>
+    </div>
+
+    <!-- === Trang Contact === -->
+    <div id="contact-page" class="page">
+      <h1>Contact</h1>
+      <p class="subtitle">Have a question, thought, or just want to say hello?</p>
+      
+      <div style="line-height:2; margin-top:1.5rem;">
+        <p><strong>Email</strong><br>stories@example.com</p>
+        <p><strong>Collaborations</strong><br>Open to interesting projects and creative ideas.</p>
+        <p><strong>Feedback</strong><br>Your thoughts help these stories grow. All messages are read and appreciated.</p>
+        <br>
+        <p style="color:#888; font-size:0.95rem;">I reply as soon as I can. Thank you for being here.</p>
       </div>
     </div>
   </main>
+
   <script src="js/main.js"></script>
+  <script>
+    // Điều hướng giữa các trang
+    const navLinks = document.querySelectorAll('nav a');
+    const pages = document.querySelectorAll('.page');
+
+    function showPage(pageId) {
+      pages.forEach(p => p.classList.remove('active'));
+      navLinks.forEach(l => l.classList.remove('active'));
+      
+      if (pageId === 'chapter-page') {
+        document.getElementById('chapter-page').classList.add('active');
+      } else {
+        document.getElementById(pageId + '-page').classList.add('active');
+        document.querySelector(`[data-page="${pageId}"]`).classList.add('active');
+      }
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        showPage(link.getAttribute('data-page'));
+      });
+    });
+
+    // Nút quay lại danh sách
+    document.getElementById('back-link').addEventListener('click', e => {
+      e.preventDefault();
+      showPage('stories');
+      currentStory = null;
+      currentChapterIndex = 0;
+    });
+  </script>
 </body>
 </html>
